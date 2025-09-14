@@ -1,0 +1,31 @@
+/* 1) Підключаємо Tailwind v4 (достатньо одного рядка) */
+@import "tailwindcss";
+
+/* 2) Базові глобальні речі під темну тему додатку */
+:root {
+    color-scheme: dark;                 /* браузерні віджети теж темні */
+    --app-bg: #0a0a0a;                  /* ваш фон */
+    --app-fg: #e5e5e5;                  /* базовий текст */
+}
+
+/* 3) Токени теми (v4 — через @theme) */
+@theme {
+    --color-brand: #3b82f6;             /* brand-колір (tailwind: blue-500) */
+    --radius-xl: 1rem;                  /* зручно для карток/кнопок */
+    --shadow-soft: 0 8px 24px 0 rgba(0,0,0,.25);
+}
+
+/* 4) Утіліта контейнера (центрування контенту) */
+@utility container {
+    max-width: 1152px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* 5) Трохи косметики */
+html, body, #root {
+    height: 100%;
+    background: var(--app-bg);
+    color: var(--app-fg);
+}
+::selection { background: color-mix(in oklab, var(--color-brand) 60%, transparent); }
